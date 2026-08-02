@@ -1,16 +1,72 @@
 {
-  "stageName": "赤の市街地",
+  "stageName": "赤の市街地 - 最終防衛線",
   "boxes": [
-    { "name": "build_left_1", "x": -10, "z": 15, "width": 8, "height": 4, "depth": 12, "color": [0.6, 0.2, 0.2] },
-    { "name": "build_right_1", "x": 10, "z": 15, "width": 8, "height": 4, "depth": 12, "color": [0.6, 0.2, 0.2] },
-    { "name": "alley_wall_1", "x": -5, "z": 25, "width": 12, "height": 3, "depth": 1.5, "color": [0.5, 0.2, 0.2] },
-    { "name": "alley_wall_2", "x": 5, "z": 25, "width": 12, "height": 3, "depth": 1.5, "color": [0.5, 0.2, 0.2] }
+    { "name": "hq_main", "x": 0, "z": 26, "width": 24, "height": 5.0, "depth": 6, "color": [0.55, 0.18, 0.18] },
+    { "name": "hq_wing_L", "x": -14, "z": 22, "width": 6, "height": 4.5, "depth": 14, "color": [0.5, 0.18, 0.18] },
+    { "name": "hq_wing_R", "x": 14, "z": 22, "width": 6, "height": 4.5, "depth": 14, "color": [0.5, 0.18, 0.18] },
+    
+    { "name": "admin_L", "x": -18, "z": -4, "width": 8, "height": 4.0, "depth": 14, "color": [0.45, 0.2, 0.2] },
+    { "name": "admin_R", "x": 18, "z": -4, "width": 8, "height": 4.0, "depth": 14, "color": [0.45, 0.2, 0.2] },
+    
+    { "name": "monument_base", "x": 0, "z": 4, "width": 5, "height": 0.8, "depth": 5, "color": [0.3, 0.3, 0.35], "rotY": 0.78 },
+    { "name": "monument_pillar_1", "x": -0.5, "z": 4.5, "width": 1.2, "height": 2.8, "depth": 1.2, "color": [0.25, 0.25, 0.3], "rotY": 0.78 },
+    { "name": "monument_pillar_2_fallen", "x": 2, "z": 2, "width": 1.2, "height": 1.0, "depth": 3.0, "color": [0.25, 0.25, 0.3], "rotY": -0.5 },
+    
+    { "name": "trench_wall_1", "x": -6, "z": 10, "width": 4, "height": 1.2, "depth": 1.5, "color": [0.4, 0.3, 0.2], "rotY": 0.4 },
+    { "name": "trench_wall_2", "x": -2, "z": 12, "width": 4, "height": 1.2, "depth": 1.5, "color": [0.4, 0.3, 0.2], "rotY": -0.2 },
+    { "name": "trench_wall_3", "x": 3, "z": 11, "width": 4, "height": 1.2, "depth": 1.5, "color": [0.4, 0.3, 0.2], "rotY": 0.3 },
+    { "name": "trench_wall_4", "x": 7, "z": 13, "width": 4, "height": 1.2, "depth": 1.5, "color": [0.4, 0.3, 0.2], "rotY": -0.4 },
+
+    { "name": "rubble_L1", "x": -8, "z": 0, "width": 3, "height": 1.5, "depth": 3, "color": [0.35, 0.3, 0.3], "rotY": 0.8 },
+    { "name": "rubble_L2", "x": -10, "z": 2, "width": 2, "height": 0.8, "depth": 4, "color": [0.35, 0.3, 0.3], "rotY": 0.2 },
+    { "name": "rubble_R1", "x": 8, "z": 0, "width": 3, "height": 1.5, "depth": 3, "color": [0.35, 0.3, 0.3], "rotY": -0.6 },
+    { "name": "rubble_R2", "x": 10, "z": 2, "width": 2, "height": 0.8, "depth": 4, "color": [0.35, 0.3, 0.3], "rotY": -0.1 },
+    
+    { "name": "shattered_wall_1", "x": -12, "z": -12, "width": 4, "height": 2.5, "depth": 0.8, "color": [0.38, 0.15, 0.15], "rotY": 0.4 },
+    { "name": "shattered_wall_2", "x": -8, "z": -14, "width": 3, "height": 1.8, "depth": 1.2, "color": [0.38, 0.15, 0.15], "rotY": -0.3 },
+    { "name": "shattered_wall_3", "x": 12, "z": -12, "width": 4, "height": 2.5, "depth": 0.8, "color": [0.38, 0.15, 0.15], "rotY": -0.5 },
+    { "name": "shattered_wall_4", "x": 8, "z": -14, "width": 3, "height": 1.8, "depth": 1.2, "color": [0.38, 0.15, 0.15], "rotY": 0.2 }
   ],
   "props": [
-    { "type": "car", "x": 0, "y": 0, "z": 8, "rotY": 0.0 },
-    { "type": "dumpster", "x": -6, "y": 0, "z": 10, "rotY": 1.57 },
-    { "type": "barrel", "x": 4, "y": 0, "z": 12, "rotY": 0 },
-    { "type": "barrel", "x": 4.6, "y": 0, "z": 12.3, "rotY": 0 },
-    { "type": "lowCover", "x": 0, "y": 0, "z": 18, "rotY": 0 }
+    { "type": "car", "x": -4, "y": 0, "z": -4, "rotY": 0.5 },
+    { "type": "car", "x": -2, "y": 0, "z": -6, "rotY": -0.2 },
+    { "type": "car", "x": 6, "y": 0, "z": -2, "rotY": -1.2 },
+    { "type": "car", "x": 7, "y": 0, "z": 5, "rotY": 0.8 },
+    { "type": "car", "x": -10, "y": 0, "z": 8, "rotY": 1.6 },
+    { "type": "car", "x": 12, "y": 0, "z": 16, "rotY": -1.4 },
+
+    { "type": "dumpster", "x": -11, "y": 0, "z": -2, "rotY": 0.4 },
+    { "type": "dumpster", "x": 11, "y": 0, "z": -2, "rotY": -0.3 },
+    { "type": "dumpster", "x": -6, "y": 0, "z": 18, "rotY": 1.2 },
+    { "type": "dumpster", "x": 6, "y": 0, "z": 18, "rotY": -1.2 },
+    { "type": "dumpster", "x": 0, "y": 0, "z": -12, "rotY": 0 },
+
+    { "type": "lowCover", "x": -8, "y": 0, "z": 13, "rotY": 0.4 },
+    { "type": "lowCover", "x": 9, "y": 0, "z": 11, "rotY": -0.4 },
+    { "type": "lowCover", "x": -5, "y": 0, "z": -8, "rotY": 1.2 },
+    { "type": "lowCover", "x": 5, "y": 0, "z": -8, "rotY": -1.2 },
+    { "type": "lowCover", "x": -2, "y": 0, "z": 16, "rotY": 0.2 },
+    { "type": "lowCover", "x": 2, "y": 0, "z": 16, "rotY": -0.2 },
+    { "type": "lowCover", "x": 0, "y": 0, "z": 0, "rotY": 0 },
+
+    { "type": "barrel", "x": -4, "y": 0, "z": 20, "rotY": 0 },
+    { "type": "barrel", "x": -3.4, "y": 0, "z": 20.3, "rotY": 0 },
+    { "type": "barrel", "x": -3.8, "y": 0, "z": 20.8, "rotY": 0 },
+    { "type": "barrel", "x": 4, "y": 0, "z": 20, "rotY": 0 },
+    { "type": "barrel", "x": 4.6, "y": 0, "z": 20.3, "rotY": 0 },
+    { "type": "barrel", "x": -13, "y": 0, "z": -7, "rotY": 0 },
+    { "type": "barrel", "x": -13.6, "y": 0, "z": -7.2, "rotY": 0 },
+    { "type": "barrel", "x": 13, "y": 0, "z": -7, "rotY": 0 },
+    { "type": "barrel", "x": 13.6, "y": 0, "z": -7.2, "rotY": 0 },
+    { "type": "barrel", "x": -3, "y": 0, "z": -2, "rotY": 0 },
+    { "type": "barrel", "x": 3, "y": 0, "z": -2, "rotY": 0 },
+    { "type": "barrel", "x": -1.5, "y": 0, "z": 7.5, "rotY": 0 },
+    { "type": "barrel", "x": 1.5, "y": 0, "z": 7.5, "rotY": 0 },
+
+    { "type": "doorFrame", "x": 0, "y": 0, "z": 23.5, "rotY": 0 },
+    { "type": "doorFrame", "x": -15, "y": 0, "z": -4, "rotY": 1.57 },
+    { "type": "doorFrame", "x": 15, "y": 0, "z": -4, "rotY": 1.57 },
+    { "type": "doorFrame", "x": -11, "y": 0, "z": 18, "rotY": 0.4 },
+    { "type": "doorFrame", "x": 11, "y": 0, "z": 18, "rotY": -0.4 }
   ]
 }
