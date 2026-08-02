@@ -10,5 +10,11 @@
     "name": "6. 赤の市街地",
     "desc": "まだ作成中の新しいカスタムステージです。",
     "fileUrl": "https://raw.githubusercontent.com/tianzhongrongzhi1-wq/eazy_game_stage/main/stage2_data.json"
+  },
+  {
+    "id": "stage3_forest",
+    "name": "7. 森と女像",
+    "desc": "樹木や自然物に身を隠しながら戦う森林ステージです。",
+    "fileUrl": "https://raw.githubusercontent.com/tianzhongrongzhi1-wq/eazy_game_stage/main/stage3_forest.json"
   }
 ]
