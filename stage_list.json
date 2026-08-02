@@ -1,0 +1,8 @@
+[
+  {
+    "id": "test_stage_01",
+    "name": "5. JSONテストステージ",
+    "desc": "GitHubから動的に生成された最初のテストステージです。",
+    "fileUrl": "https://raw.githubusercontent.com/あなたのユーザー名/あなたのリポジトリ名/main/stage1_data.json"
+  }
+]

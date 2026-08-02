@@ -1,0 +1,11 @@
+{
+  "stageName": "JSONテストステージ",
+  "boxes": [
+    { "name": "wall_A", "x": 0, "z": 10, "width": 10, "height": 3, "depth": 1, "color": [0.8, 0.2, 0.2] },
+    { "name": "wall_B", "x": -5, "z": 5, "width": 1, "height": 3, "depth": 10, "color": [0.2, 0.2, 0.8] }
+  ],
+  "props": [
+    { "type": "car", "x": 3, "y": 0, "z": 5, "rotY": 0.5 },
+    { "type": "barrel", "x": -2, "y": 0, "z": 2, "rotY": 0 }
+  ]
+}
