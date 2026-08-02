@@ -1,0 +1,16 @@
+{
+  "stageName": "赤の市街地",
+  "boxes": [
+    { "name": "build_left_1", "x": -10, "z": 15, "width": 8, "height": 4, "depth": 12, "color": [0.6, 0.2, 0.2] },
+    { "name": "build_right_1", "x": 10, "z": 15, "width": 8, "height": 4, "depth": 12, "color": [0.6, 0.2, 0.2] },
+    { "name": "alley_wall_1", "x": -5, "z": 25, "width": 12, "height": 3, "depth": 1.5, "color": [0.5, 0.2, 0.2] },
+    { "name": "alley_wall_2", "x": 5, "z": 25, "width": 12, "height": 3, "depth": 1.5, "color": [0.5, 0.2, 0.2] }
+  ],
+  "props": [
+    { "type": "car", "x": 0, "y": 0, "z": 8, "rotY": 0.0 },
+    { "type": "dumpster", "x": -6, "y": 0, "z": 10, "rotY": 1.57 },
+    { "type": "barrel", "x": 4, "y": 0, "z": 12, "rotY": 0 },
+    { "type": "barrel", "x": 4.6, "y": 0, "z": 12.3, "rotY": 0 },
+    { "type": "lowCover", "x": 0, "y": 0, "z": 18, "rotY": 0 }
+  ]
+}
