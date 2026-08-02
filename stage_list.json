@@ -4,5 +4,11 @@
     "name": "5. JSONテストステージ",
     "desc": "GitHubから動的に生成された最初のテストステージです。",
     "fileUrl": "https://raw.githubusercontent.com/tianzhongrongzhi1-wq/eazy_game_stage/main/stage1_data.json"
+  },
+  {
+    "id": "stage2",
+    "name": "6. 赤の市街地",
+    "desc": "まだ作成中の新しいカスタムステージです。",
+    "fileUrl": "https://raw.githubusercontent.com/tianzhongrongzhi1-wq/eazy_game_stage/main/stage2_data.json"
   }
 ]
