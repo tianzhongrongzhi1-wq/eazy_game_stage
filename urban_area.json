@@ -1,0 +1,11 @@
+{
+  "stageName": "アーバンエリア",
+  "glbModel": {
+    "url": "https://raw.githubusercontent.com/tianzhongrongzhi1-wq/eazy_game_stage/main/",
+    "fileName": "urban_area.glb",
+    "scale": 1.0,
+    "x": 0,
+    "y": 0,
+    "z": 0
+  }
+}
