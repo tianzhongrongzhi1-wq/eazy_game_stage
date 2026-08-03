@@ -12,9 +12,9 @@
     "fileUrl": "https://raw.githubusercontent.com/tianzhongrongzhi1-wq/eazy_game_stage/main/stage2_data.json"
   },
   {
-    "id": "stage3_forest",
-    "name": "7. 森と女像",
-    "desc": "GLBモデルを読み込む森林ステージです。",
-    "fileUrl": "https://raw.githubusercontent.com/tianzhongrongzhi1-wq/eazy_game_stage/main/stage3_forest.json"
+    "id": "stage3_urban_area",
+    "name": "7.市街地",
+    "desc": "GLBモデルを読み込む市街地ステージです。",
+    "fileUrl": "https://raw.githubusercontent.com/tianzhongrongzhi1-wq/eazy_game_stage/main/urban_area.json"
   }
 ]
