@@ -1,5 +1,11 @@
 {
   "stageName": "アーバンエリア",
+  "lightIntensity": 2.5,  // 💡 ここでステージの明るさを自由に調整！（暗ければ3.0などに）
+  "spawnPoint": {
+    "x": -79.55,
+    "y": -7.00,           // 📍 沼に沈まないよう、-9.70より少し高い空中に設定
+    "z": -57.28
+  },
   "glbModel": {
     "url": "https://raw.githubusercontent.com/tianzhongrongzhi1-wq/eazy_game_stage/main/",
     "fileName": "urban_area.glb",
