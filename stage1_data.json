@@ -12,9 +12,9 @@
       "x": 0,
       "y": -0.1,
       "z": -8.5,
-      "width": 44,
+      "width": 50,
       "height": 0.2,
-      "depth": 22,
+      "depth": 26,
       "color": [
         0.22,
         0.22,
@@ -325,20 +325,6 @@
         0.45,
         0.2,
         0.15
-      ]
-    },
-    {
-      "name": "front_facade_left",
-      "x": -15,
-      "y": 0.9,
-      "z": -0.5,
-      "width": 8.0,
-      "height": 1.8,
-      "depth": 0.6,
-      "color": [
-        0.45,
-        0.2,
-        0.2
       ]
     },
     {
@@ -1034,7 +1020,8 @@
         0.319,
         0.334
       ],
-      "rotY": 5.716
+      "rotY": 5.716,
+      "checkCollisions": false
     },
     {
       "name": "rubble_chunk_001",
@@ -1049,7 +1036,8 @@
         0.249,
         0.261
       ],
-      "rotY": 3.553
+      "rotY": 3.553,
+      "checkCollisions": false
     },
     {
       "name": "rubble_chunk_002",
@@ -1064,7 +1052,8 @@
         0.227,
         0.239
       ],
-      "rotY": 1.389
+      "rotY": 1.389,
+      "checkCollisions": false
     },
     {
       "name": "rubble_chunk_003",
@@ -1079,7 +1068,8 @@
         0.285,
         0.299
       ],
-      "rotY": 4.285
+      "rotY": 4.285,
+      "checkCollisions": false
     },
     {
       "name": "rubble_chunk_004",
@@ -1094,7 +1084,8 @@
         0.232,
         0.243
       ],
-      "rotY": 3.889
+      "rotY": 3.889,
+      "checkCollisions": false
     },
     {
       "name": "rubble_chunk_005",
@@ -1109,7 +1100,8 @@
         0.276,
         0.29
       ],
-      "rotY": 1.561
+      "rotY": 1.561,
+      "checkCollisions": false
     },
     {
       "name": "rubble_chunk_006",
@@ -1124,7 +1116,8 @@
         0.256,
         0.269
       ],
-      "rotY": 2.82
+      "rotY": 2.82,
+      "checkCollisions": false
     },
     {
       "name": "rubble_chunk_007",
@@ -1139,7 +1132,8 @@
         0.311,
         0.326
       ],
-      "rotY": 0.246
+      "rotY": 0.246,
+      "checkCollisions": false
     },
     {
       "name": "rubble_chunk_008",
@@ -1154,7 +1148,8 @@
         0.325,
         0.341
       ],
-      "rotY": 3.735
+      "rotY": 3.735,
+      "checkCollisions": false
     },
     {
       "name": "rubble_chunk_009",
@@ -1169,7 +1164,8 @@
         0.333,
         0.35
       ],
-      "rotY": 0.381
+      "rotY": 0.381,
+      "checkCollisions": false
     },
     {
       "name": "rubble_chunk_010",
@@ -1184,7 +1180,8 @@
         0.319,
         0.335
       ],
-      "rotY": 4.201
+      "rotY": 4.201,
+      "checkCollisions": false
     },
     {
       "name": "rubble_chunk_011",
@@ -1199,7 +1196,8 @@
         0.234,
         0.246
       ],
-      "rotY": 0.813
+      "rotY": 0.813,
+      "checkCollisions": false
     },
     {
       "name": "rubble_chunk_012",
@@ -1214,7 +1212,8 @@
         0.23,
         0.241
       ],
-      "rotY": 5.55
+      "rotY": 5.55,
+      "checkCollisions": false
     },
     {
       "name": "rubble_chunk_013",
@@ -1229,7 +1228,8 @@
         0.27,
         0.283
       ],
-      "rotY": 6.018
+      "rotY": 6.018,
+      "checkCollisions": false
     },
     {
       "name": "rubble_chunk_014",
@@ -1244,7 +1244,8 @@
         0.248,
         0.26
       ],
-      "rotY": 1.651
+      "rotY": 1.651,
+      "checkCollisions": false
     },
     {
       "name": "rubble_chunk_015",
@@ -1259,7 +1260,8 @@
         0.288,
         0.302
       ],
-      "rotY": 3.239
+      "rotY": 3.239,
+      "checkCollisions": false
     },
     {
       "name": "rubble_chunk_016",
@@ -1274,7 +1276,8 @@
         0.325,
         0.341
       ],
-      "rotY": 3.514
+      "rotY": 3.514,
+      "checkCollisions": false
     },
     {
       "name": "rubble_chunk_017",
@@ -1289,7 +1292,8 @@
         0.268,
         0.281
       ],
-      "rotY": 2.769
+      "rotY": 2.769,
+      "checkCollisions": false
     },
     {
       "name": "rubble_chunk_018",
@@ -1304,7 +1308,8 @@
         0.288,
         0.302
       ],
-      "rotY": 3.856
+      "rotY": 3.856,
+      "checkCollisions": false
     },
     {
       "name": "rubble_chunk_019",
@@ -1319,7 +1324,8 @@
         0.296,
         0.311
       ],
-      "rotY": 2.979
+      "rotY": 2.979,
+      "checkCollisions": false
     },
     {
       "name": "rubble_chunk_020",
@@ -1334,7 +1340,8 @@
         0.278,
         0.292
       ],
-      "rotY": 4.71
+      "rotY": 4.71,
+      "checkCollisions": false
     },
     {
       "name": "rubble_chunk_021",
@@ -1349,7 +1356,8 @@
         0.282,
         0.296
       ],
-      "rotY": 2.273
+      "rotY": 2.273,
+      "checkCollisions": false
     },
     {
       "name": "rubble_chunk_022",
@@ -1364,7 +1372,8 @@
         0.256,
         0.269
       ],
-      "rotY": 5.312
+      "rotY": 5.312,
+      "checkCollisions": false
     },
     {
       "name": "rubble_chunk_023",
@@ -1379,7 +1388,8 @@
         0.247,
         0.259
       ],
-      "rotY": 3.999
+      "rotY": 3.999,
+      "checkCollisions": false
     },
     {
       "name": "rubble_chunk_024",
@@ -1394,7 +1404,8 @@
         0.243,
         0.256
       ],
-      "rotY": 5.047
+      "rotY": 5.047,
+      "checkCollisions": false
     },
     {
       "name": "rubble_chunk_025",
@@ -1409,7 +1420,8 @@
         0.223,
         0.235
       ],
-      "rotY": 4.351
+      "rotY": 4.351,
+      "checkCollisions": false
     },
     {
       "name": "rubble_chunk_026",
@@ -1424,7 +1436,8 @@
         0.339,
         0.355
       ],
-      "rotY": 1.385
+      "rotY": 1.385,
+      "checkCollisions": false
     },
     {
       "name": "rubble_chunk_027",
@@ -1439,7 +1452,8 @@
         0.295,
         0.31
       ],
-      "rotY": 3.013
+      "rotY": 3.013,
+      "checkCollisions": false
     },
     {
       "name": "rubble_chunk_028",
@@ -1454,7 +1468,8 @@
         0.299,
         0.314
       ],
-      "rotY": 4.713
+      "rotY": 4.713,
+      "checkCollisions": false
     },
     {
       "name": "rubble_chunk_029",
@@ -1469,7 +1484,8 @@
         0.26,
         0.273
       ],
-      "rotY": 2.487
+      "rotY": 2.487,
+      "checkCollisions": false
     },
     {
       "name": "rubble_chunk_030",
@@ -1484,7 +1500,8 @@
         0.24,
         0.252
       ],
-      "rotY": 5.685
+      "rotY": 5.685,
+      "checkCollisions": false
     },
     {
       "name": "rubble_chunk_031",
@@ -1499,7 +1516,8 @@
         0.316,
         0.332
       ],
-      "rotY": 4.709
+      "rotY": 4.709,
+      "checkCollisions": false
     },
     {
       "name": "rubble_chunk_032",
@@ -1514,7 +1532,8 @@
         0.325,
         0.341
       ],
-      "rotY": 3.149
+      "rotY": 3.149,
+      "checkCollisions": false
     },
     {
       "name": "rubble_chunk_033",
@@ -1529,7 +1548,8 @@
         0.32,
         0.336
       ],
-      "rotY": 5.64
+      "rotY": 5.64,
+      "checkCollisions": false
     },
     {
       "name": "rubble_chunk_034",
@@ -1544,7 +1564,8 @@
         0.284,
         0.298
       ],
-      "rotY": 2.765
+      "rotY": 2.765,
+      "checkCollisions": false
     },
     {
       "name": "rubble_chunk_035",
@@ -1559,7 +1580,8 @@
         0.241,
         0.253
       ],
-      "rotY": 3.496
+      "rotY": 3.496,
+      "checkCollisions": false
     },
     {
       "name": "rubble_chunk_036",
@@ -1574,7 +1596,8 @@
         0.314,
         0.33
       ],
-      "rotY": 1.561
+      "rotY": 1.561,
+      "checkCollisions": false
     },
     {
       "name": "rubble_chunk_037",
@@ -1589,7 +1612,8 @@
         0.287,
         0.302
       ],
-      "rotY": 2.785
+      "rotY": 2.785,
+      "checkCollisions": false
     },
     {
       "name": "rubble_chunk_038",
@@ -1604,7 +1628,8 @@
         0.303,
         0.318
       ],
-      "rotY": 3.004
+      "rotY": 3.004,
+      "checkCollisions": false
     },
     {
       "name": "rubble_chunk_039",
@@ -1619,7 +1644,8 @@
         0.321,
         0.337
       ],
-      "rotY": 2.778
+      "rotY": 2.778,
+      "checkCollisions": false
     },
     {
       "name": "rubble_chunk_040",
@@ -1634,7 +1660,8 @@
         0.3,
         0.315
       ],
-      "rotY": 0.97
+      "rotY": 0.97,
+      "checkCollisions": false
     },
     {
       "name": "rubble_chunk_041",
@@ -1649,7 +1676,8 @@
         0.246,
         0.259
       ],
-      "rotY": 3.062
+      "rotY": 3.062,
+      "checkCollisions": false
     },
     {
       "name": "rubble_chunk_042",
@@ -1664,7 +1692,8 @@
         0.272,
         0.285
       ],
-      "rotY": 1.23
+      "rotY": 1.23,
+      "checkCollisions": false
     },
     {
       "name": "rubble_chunk_043",
@@ -1679,7 +1708,8 @@
         0.286,
         0.301
       ],
-      "rotY": 2.083
+      "rotY": 2.083,
+      "checkCollisions": false
     },
     {
       "name": "rubble_chunk_044",
@@ -1694,7 +1724,8 @@
         0.338,
         0.355
       ],
-      "rotY": 0.658
+      "rotY": 0.658,
+      "checkCollisions": false
     },
     {
       "name": "rubble_chunk_045",
@@ -1709,7 +1740,8 @@
         0.252,
         0.265
       ],
-      "rotY": 5.727
+      "rotY": 5.727,
+      "checkCollisions": false
     },
     {
       "name": "rubble_chunk_046",
@@ -1724,7 +1756,8 @@
         0.33,
         0.347
       ],
-      "rotY": 0.562
+      "rotY": 0.562,
+      "checkCollisions": false
     },
     {
       "name": "rubble_chunk_047",
@@ -1739,7 +1772,8 @@
         0.229,
         0.24
       ],
-      "rotY": 5.037
+      "rotY": 5.037,
+      "checkCollisions": false
     },
     {
       "name": "rubble_chunk_048",
@@ -1754,7 +1788,8 @@
         0.235,
         0.246
       ],
-      "rotY": 2.625
+      "rotY": 2.625,
+      "checkCollisions": false
     },
     {
       "name": "rubble_chunk_049",
@@ -1769,7 +1804,8 @@
         0.305,
         0.32
       ],
-      "rotY": 1.646
+      "rotY": 1.646,
+      "checkCollisions": false
     },
     {
       "name": "rubble_chunk_050",
@@ -1784,7 +1820,8 @@
         0.284,
         0.298
       ],
-      "rotY": 4.223
+      "rotY": 4.223,
+      "checkCollisions": false
     },
     {
       "name": "rubble_chunk_051",
@@ -1799,7 +1836,8 @@
         0.224,
         0.236
       ],
-      "rotY": 6.145
+      "rotY": 6.145,
+      "checkCollisions": false
     },
     {
       "name": "rubble_chunk_052",
@@ -1814,7 +1852,8 @@
         0.299,
         0.314
       ],
-      "rotY": 3.43
+      "rotY": 3.43,
+      "checkCollisions": false
     },
     {
       "name": "rubble_chunk_053",
@@ -1829,7 +1868,8 @@
         0.248,
         0.26
       ],
-      "rotY": 4.579
+      "rotY": 4.579,
+      "checkCollisions": false
     },
     {
       "name": "rubble_chunk_054",
@@ -1844,7 +1884,8 @@
         0.32,
         0.336
       ],
-      "rotY": 5.528
+      "rotY": 5.528,
+      "checkCollisions": false
     },
     {
       "name": "rubble_chunk_055",
@@ -1859,7 +1900,8 @@
         0.266,
         0.279
       ],
-      "rotY": 3.762
+      "rotY": 3.762,
+      "checkCollisions": false
     },
     {
       "name": "rubble_chunk_056",
@@ -1874,7 +1916,8 @@
         0.252,
         0.265
       ],
-      "rotY": 2.067
+      "rotY": 2.067,
+      "checkCollisions": false
     },
     {
       "name": "rubble_chunk_057",
@@ -1889,7 +1932,8 @@
         0.326,
         0.342
       ],
-      "rotY": 2.107
+      "rotY": 2.107,
+      "checkCollisions": false
     },
     {
       "name": "rubble_chunk_058",
@@ -1904,7 +1948,8 @@
         0.25,
         0.262
       ],
-      "rotY": 5.134
+      "rotY": 5.134,
+      "checkCollisions": false
     },
     {
       "name": "rubble_chunk_059",
@@ -1919,7 +1964,8 @@
         0.256,
         0.269
       ],
-      "rotY": 6.017
+      "rotY": 6.017,
+      "checkCollisions": false
     },
     {
       "name": "rubble_chunk_060",
@@ -1934,7 +1980,8 @@
         0.314,
         0.33
       ],
-      "rotY": 4.528
+      "rotY": 4.528,
+      "checkCollisions": false
     },
     {
       "name": "debris_rebar_00",
@@ -1949,7 +1996,8 @@
         0.24,
         0.2
       ],
-      "rotY": 5.604
+      "rotY": 5.604,
+      "checkCollisions": false
     },
     {
       "name": "debris_rebar_01",
@@ -1964,7 +2012,8 @@
         0.19,
         0.18
       ],
-      "rotY": 5.246
+      "rotY": 5.246,
+      "checkCollisions": false
     },
     {
       "name": "debris_rebar_02",
@@ -1979,7 +2028,8 @@
         0.19,
         0.18
       ],
-      "rotY": 1.445
+      "rotY": 1.445,
+      "checkCollisions": false
     },
     {
       "name": "debris_rebar_03",
@@ -1994,7 +2044,8 @@
         0.24,
         0.2
       ],
-      "rotY": 0.319
+      "rotY": 0.319,
+      "checkCollisions": false
     },
     {
       "name": "debris_rebar_04",
@@ -2009,7 +2060,8 @@
         0.24,
         0.2
       ],
-      "rotY": 4.701
+      "rotY": 4.701,
+      "checkCollisions": false
     },
     {
       "name": "debris_rebar_05",
@@ -2024,7 +2076,8 @@
         0.24,
         0.2
       ],
-      "rotY": 1.669
+      "rotY": 1.669,
+      "checkCollisions": false
     },
     {
       "name": "debris_rebar_06",
@@ -2039,7 +2092,8 @@
         0.19,
         0.18
       ],
-      "rotY": 5.721
+      "rotY": 5.721,
+      "checkCollisions": false
     },
     {
       "name": "debris_rebar_07",
@@ -2054,7 +2108,8 @@
         0.24,
         0.2
       ],
-      "rotY": 1.596
+      "rotY": 1.596,
+      "checkCollisions": false
     },
     {
       "name": "debris_rebar_08",
@@ -2069,7 +2124,8 @@
         0.19,
         0.18
       ],
-      "rotY": 0.625
+      "rotY": 0.625,
+      "checkCollisions": false
     },
     {
       "name": "debris_rebar_09",
@@ -2084,7 +2140,8 @@
         0.19,
         0.18
       ],
-      "rotY": 0.745
+      "rotY": 0.745,
+      "checkCollisions": false
     },
     {
       "name": "debris_rebar_10",
@@ -2099,7 +2156,8 @@
         0.24,
         0.2
       ],
-      "rotY": 3.183
+      "rotY": 3.183,
+      "checkCollisions": false
     },
     {
       "name": "debris_rebar_11",
@@ -2114,7 +2172,8 @@
         0.19,
         0.18
       ],
-      "rotY": 0.567
+      "rotY": 0.567,
+      "checkCollisions": false
     },
     {
       "name": "debris_rebar_12",
@@ -2129,7 +2188,8 @@
         0.19,
         0.18
       ],
-      "rotY": 4.419
+      "rotY": 4.419,
+      "checkCollisions": false
     },
     {
       "name": "debris_rebar_13",
@@ -2144,7 +2204,8 @@
         0.24,
         0.2
       ],
-      "rotY": 4.283
+      "rotY": 4.283,
+      "checkCollisions": false
     },
     {
       "name": "crack_patch_00",
@@ -2159,7 +2220,8 @@
         0.165,
         0.181
       ],
-      "rotY": 2.082
+      "rotY": 2.082,
+      "checkCollisions": false
     },
     {
       "name": "crack_patch_01",
@@ -2174,7 +2236,8 @@
         0.168,
         0.185
       ],
-      "rotY": 0.074
+      "rotY": 0.074,
+      "checkCollisions": false
     },
     {
       "name": "crack_patch_02",
@@ -2189,7 +2252,8 @@
         0.195,
         0.214
       ],
-      "rotY": 0.48
+      "rotY": 0.48,
+      "checkCollisions": false
     },
     {
       "name": "crack_patch_03",
@@ -2204,7 +2268,8 @@
         0.162,
         0.178
       ],
-      "rotY": 4.159
+      "rotY": 4.159,
+      "checkCollisions": false
     },
     {
       "name": "crack_patch_04",
@@ -2219,7 +2284,8 @@
         0.173,
         0.19
       ],
-      "rotY": 4.858
+      "rotY": 4.858,
+      "checkCollisions": false
     },
     {
       "name": "crack_patch_05",
@@ -2234,7 +2300,8 @@
         0.176,
         0.194
       ],
-      "rotY": 5.502
+      "rotY": 5.502,
+      "checkCollisions": false
     },
     {
       "name": "crack_patch_06",
@@ -2249,7 +2316,8 @@
         0.176,
         0.194
       ],
-      "rotY": 3.864
+      "rotY": 3.864,
+      "checkCollisions": false
     },
     {
       "name": "crack_patch_07",
@@ -2264,7 +2332,8 @@
         0.182,
         0.2
       ],
-      "rotY": 1.073
+      "rotY": 1.073,
+      "checkCollisions": false
     },
     {
       "name": "crack_patch_08",
@@ -2279,7 +2348,8 @@
         0.186,
         0.205
       ],
-      "rotY": 2.552
+      "rotY": 2.552,
+      "checkCollisions": false
     },
     {
       "name": "crack_patch_09",
@@ -2294,7 +2364,8 @@
         0.186,
         0.204
       ],
-      "rotY": 0.472
+      "rotY": 0.472,
+      "checkCollisions": false
     },
     {
       "name": "crack_patch_11",
@@ -2309,7 +2380,8 @@
         0.177,
         0.195
       ],
-      "rotY": 3.442
+      "rotY": 3.442,
+      "checkCollisions": false
     },
     {
       "name": "crack_patch_12",
@@ -2324,7 +2396,8 @@
         0.175,
         0.192
       ],
-      "rotY": 5.085
+      "rotY": 5.085,
+      "checkCollisions": false
     },
     {
       "name": "crack_patch_13",
@@ -2339,7 +2412,8 @@
         0.19,
         0.209
       ],
-      "rotY": 1.319
+      "rotY": 1.319,
+      "checkCollisions": false
     },
     {
       "name": "crack_patch_14",
@@ -2354,7 +2428,8 @@
         0.174,
         0.192
       ],
-      "rotY": 4.315
+      "rotY": 4.315,
+      "checkCollisions": false
     },
     {
       "name": "crack_patch_16",
@@ -2369,7 +2444,8 @@
         0.186,
         0.204
       ],
-      "rotY": 2.713
+      "rotY": 2.713,
+      "checkCollisions": false
     },
     {
       "name": "crack_patch_17",
@@ -2384,7 +2460,8 @@
         0.177,
         0.195
       ],
-      "rotY": 4.798
+      "rotY": 4.798,
+      "checkCollisions": false
     },
     {
       "name": "crack_patch_18",
@@ -2399,7 +2476,8 @@
         0.197,
         0.217
       ],
-      "rotY": 5.832
+      "rotY": 5.832,
+      "checkCollisions": false
     },
     {
       "name": "scorch_front_facade_left_0",
@@ -2414,7 +2492,8 @@
         0.08,
         0.08
       ],
-      "rotY": -0.078
+      "rotY": -0.078,
+      "checkCollisions": false
     },
     {
       "name": "scorch_front_facade_left_1",
@@ -2429,7 +2508,8 @@
         0.08,
         0.08
       ],
-      "rotY": 0.055
+      "rotY": 0.055,
+      "checkCollisions": false
     },
     {
       "name": "scorch_front_facade_right_0",
@@ -2444,7 +2524,8 @@
         0.08,
         0.08
       ],
-      "rotY": 0.092
+      "rotY": 0.092,
+      "checkCollisions": false
     },
     {
       "name": "scorch_front_facade_right_1",
@@ -2459,7 +2540,8 @@
         0.08,
         0.08
       ],
-      "rotY": -0.04
+      "rotY": -0.04,
+      "checkCollisions": false
     },
     {
       "name": "scorch_z1_cargoshed_wall_S_0",
@@ -2474,7 +2556,8 @@
         0.08,
         0.08
       ],
-      "rotY": 0.007
+      "rotY": 0.007,
+      "checkCollisions": false
     },
     {
       "name": "scorch_z1_cargoshed_wall_S_1",
@@ -2489,7 +2572,8 @@
         0.08,
         0.08
       ],
-      "rotY": 0.005
+      "rotY": 0.005,
+      "checkCollisions": false
     },
     {
       "name": "scorch_z1_signalhut_wall_S_0",
@@ -2504,7 +2588,8 @@
         0.08,
         0.08
       ],
-      "rotY": -0.061
+      "rotY": -0.061,
+      "checkCollisions": false
     },
     {
       "name": "scorch_z1_signalhut_wall_S_1",
@@ -2519,7 +2604,8 @@
         0.08,
         0.08
       ],
-      "rotY": -0.026
+      "rotY": -0.026,
+      "checkCollisions": false
     },
     {
       "name": "wall_break_shard_-15_0",
@@ -2534,7 +2620,8 @@
         0.18,
         0.18
       ],
-      "rotY": -0.062
+      "rotY": -0.062,
+      "checkCollisions": false
     },
     {
       "name": "wall_break_shard_-15_1",
@@ -2549,7 +2636,8 @@
         0.18,
         0.18
       ],
-      "rotY": -0.003
+      "rotY": -0.003,
+      "checkCollisions": false
     },
     {
       "name": "wall_break_shard_-15_2",
@@ -2564,7 +2652,8 @@
         0.18,
         0.18
       ],
-      "rotY": -0.141
+      "rotY": -0.141,
+      "checkCollisions": false
     },
     {
       "name": "wall_break_shard_-15_3",
@@ -2579,7 +2668,8 @@
         0.18,
         0.18
       ],
-      "rotY": 0.238
+      "rotY": 0.238,
+      "checkCollisions": false
     },
     {
       "name": "wall_break_shard_15_0",
@@ -2594,7 +2684,8 @@
         0.18,
         0.18
       ],
-      "rotY": 0.253
+      "rotY": 0.253,
+      "checkCollisions": false
     },
     {
       "name": "wall_break_shard_15_1",
@@ -2609,7 +2700,8 @@
         0.18,
         0.18
       ],
-      "rotY": 0.126
+      "rotY": 0.126,
+      "checkCollisions": false
     },
     {
       "name": "wall_break_shard_15_2",
@@ -2624,7 +2716,8 @@
         0.18,
         0.18
       ],
-      "rotY": -0.232
+      "rotY": -0.232,
+      "checkCollisions": false
     },
     {
       "name": "wall_break_shard_15_3",
@@ -2639,7 +2732,683 @@
         0.18,
         0.18
       ],
-      "rotY": 0.015
+      "rotY": 0.015,
+      "checkCollisions": false
+    },
+    {
+      "name": "depot_wall_S_00",
+      "x": -18.34,
+      "y": 0.82,
+      "z": -3,
+      "width": 1.32,
+      "height": 1.64,
+      "depth": 0.5,
+      "color": [
+        0.2659877436508078,
+        0.11511510083752202,
+        0.11830675820321783
+      ]
+    },
+    {
+      "name": "depot_wall_S_01",
+      "x": -16.8,
+      "y": 1.26,
+      "z": -3,
+      "width": 1.4,
+      "height": 2.53,
+      "depth": 0.5,
+      "color": [
+        0.4121639291362655,
+        0.2013216061803752,
+        0.13166923120067567
+      ]
+    },
+    {
+      "name": "depot_wall_S_02",
+      "x": -15.32,
+      "y": 0.94,
+      "z": -3,
+      "width": 1.36,
+      "height": 1.88,
+      "depth": 0.5,
+      "color": [
+        0.3852276534300173,
+        0.2060567895911641,
+        0.19499671933570134
+      ]
+    },
+    {
+      "name": "depot_wall_S_03",
+      "x": -13.76,
+      "y": 1.02,
+      "z": -3,
+      "width": 1.49,
+      "height": 2.05,
+      "depth": 0.5,
+      "color": [
+        0.41690390476314626,
+        0.18026227298576494,
+        0.1369399214967727
+      ]
+    },
+    {
+      "name": "depot_wall_S_05",
+      "x": -10.75,
+      "y": 1.03,
+      "z": -3,
+      "width": 1.5,
+      "height": 2.06,
+      "depth": 0.5,
+      "color": [
+        0.46002422630643836,
+        0.20055091281436416,
+        0.20767118845233157
+      ]
+    },
+    {
+      "name": "depot_wall_N_00",
+      "x": -18.34,
+      "y": 1.16,
+      "z": 3,
+      "width": 1.32,
+      "height": 2.31,
+      "depth": 0.5,
+      "color": [
+        0.2691839111162086,
+        0.14954175213340445,
+        0.17828880889536847
+      ]
+    },
+    {
+      "name": "depot_wall_N_01",
+      "x": -16.79,
+      "y": 0.68,
+      "z": 3,
+      "width": 1.42,
+      "height": 1.36,
+      "depth": 0.5,
+      "color": [
+        0.23737268811752252,
+        0.17196680651532348,
+        0.08811601499965971
+      ]
+    },
+    {
+      "name": "depot_wall_N_02",
+      "x": -15.35,
+      "y": 0.83,
+      "z": 3,
+      "width": 1.29,
+      "height": 1.65,
+      "depth": 0.5,
+      "color": [
+        0.22296976844654687,
+        0.14234020829597882,
+        0.10007944129405182
+      ]
+    },
+    {
+      "name": "depot_wall_N_03",
+      "x": -13.86,
+      "y": 0.77,
+      "z": 3,
+      "width": 1.29,
+      "height": 1.55,
+      "depth": 0.5,
+      "color": [
+        0.23040676640356614,
+        0.16637949297305266,
+        0.1153808521787468
+      ]
+    },
+    {
+      "name": "depot_wall_N_04",
+      "x": -12.26,
+      "y": 0.73,
+      "z": 3,
+      "width": 1.48,
+      "height": 1.46,
+      "depth": 0.5,
+      "color": [
+        0.42996680317740293,
+        0.21472213070872428,
+        0.17080345656068877
+      ]
+    },
+    {
+      "name": "depot_wall_N_05",
+      "x": -10.85,
+      "y": 0.74,
+      "z": 3,
+      "width": 1.3,
+      "height": 1.48,
+      "depth": 0.5,
+      "color": [
+        0.20776455075284433,
+        0.10455114478180848,
+        0.10075793212684295
+      ]
+    },
+    {
+      "name": "depot_wall_W_00",
+      "x": -19,
+      "y": 1.27,
+      "z": -2.03,
+      "width": 0.5,
+      "height": 2.55,
+      "depth": 1.93,
+      "color": [
+        0.38172132704993045,
+        0.2222348463249971,
+        0.1285951938318645
+      ]
+    },
+    {
+      "name": "depot_wall_W_02",
+      "x": -19,
+      "y": 0.8,
+      "z": 1.94,
+      "width": 0.5,
+      "height": 1.6,
+      "depth": 1.88,
+      "color": [
+        0.2299100835150137,
+        0.17223671154109538,
+        0.11994101240183411
+      ]
+    },
+    {
+      "name": "depot_wall_E_00",
+      "x": -10,
+      "y": 0.65,
+      "z": -2.09,
+      "width": 0.5,
+      "height": 1.3,
+      "depth": 1.81,
+      "color": [
+        0.4623036160863903,
+        0.2121660016902845,
+        0.14985798937888564
+      ]
+    },
+    {
+      "name": "depot_wall_E_01",
+      "x": -10,
+      "y": 0.93,
+      "z": -0.1,
+      "width": 0.5,
+      "height": 1.86,
+      "depth": 1.79,
+      "color": [
+        0.4010656414223825,
+        0.22742301515331992,
+        0.18207252406621938
+      ]
+    },
+    {
+      "name": "depot_wall_E_02",
+      "x": -10,
+      "y": 0.94,
+      "z": 1.97,
+      "width": 0.5,
+      "height": 1.88,
+      "depth": 1.94,
+      "color": [
+        0.21963767382362884,
+        0.16515062537721686,
+        0.08801270893404066
+      ]
+    },
+    {
+      "name": "depot_partition_a_00",
+      "x": -16,
+      "y": 0.83,
+      "z": -2.01,
+      "width": 0.35,
+      "height": 1.66,
+      "depth": 1.99,
+      "color": [
+        0.460720565382248,
+        0.22745930516764207,
+        0.18882041594169913
+      ]
+    },
+    {
+      "name": "depot_partition_a_01",
+      "x": -16,
+      "y": 0.83,
+      "z": -0.01,
+      "width": 0.35,
+      "height": 1.66,
+      "depth": 1.98,
+      "color": [
+        0.41093324614175714,
+        0.2058217428820726,
+        0.1711003638501613
+      ]
+    },
+    {
+      "name": "depot_partition_a_02",
+      "x": -16,
+      "y": 1.03,
+      "z": 1.95,
+      "width": 0.35,
+      "height": 2.05,
+      "depth": 1.9,
+      "color": [
+        0.43667816990228425,
+        0.184005350913459,
+        0.14798245291176965
+      ]
+    },
+    {
+      "name": "depot_partition_b_00",
+      "x": -13,
+      "y": 0.98,
+      "z": -2.1,
+      "width": 0.35,
+      "height": 1.96,
+      "depth": 1.8,
+      "color": [
+        0.46646474931423054,
+        0.15932769484171938,
+        0.17650114258216085
+      ]
+    },
+    {
+      "name": "depot_partition_b_02",
+      "x": -13,
+      "y": 1.02,
+      "z": 1.95,
+      "width": 0.35,
+      "height": 2.03,
+      "depth": 1.9,
+      "color": [
+        0.39312366024274065,
+        0.22605054085087212,
+        0.14455363635462248
+      ]
+    },
+    {
+      "name": "depot_pillar_00",
+      "x": -19,
+      "y": 1.64,
+      "z": -3,
+      "width": 0.55,
+      "height": 3.28,
+      "depth": 0.55,
+      "color": [
+        0.3489865723262168,
+        0.3625398750320064,
+        0.30010339708453426
+      ]
+    },
+    {
+      "name": "depot_pillar_01",
+      "x": -19,
+      "y": 1.56,
+      "z": 3,
+      "width": 0.55,
+      "height": 3.13,
+      "depth": 0.55,
+      "color": [
+        0.39378404139178985,
+        0.37980358659652136,
+        0.3133887729114985
+      ]
+    },
+    {
+      "name": "depot_pillar_02",
+      "x": -10,
+      "y": 1.97,
+      "z": -3,
+      "width": 0.55,
+      "height": 3.93,
+      "depth": 0.55,
+      "color": [
+        0.37552934642618396,
+        0.33642372504705575,
+        0.35988615444389116
+      ]
+    },
+    {
+      "name": "depot_pillar_03",
+      "x": -10,
+      "y": 1.93,
+      "z": 3,
+      "width": 0.55,
+      "height": 3.86,
+      "depth": 0.55,
+      "color": [
+        0.3774419585230191,
+        0.36248248435615105,
+        0.34958430216780984
+      ]
+    },
+    {
+      "name": "depot_pillar_04",
+      "x": -16,
+      "y": 1.84,
+      "z": 0,
+      "width": 0.55,
+      "height": 3.67,
+      "depth": 0.55,
+      "color": [
+        0.4012033287322152,
+        0.38151489811390854,
+        0.3160227684612479
+      ]
+    },
+    {
+      "name": "depot_pillar_05",
+      "x": -13,
+      "y": 1.32,
+      "z": 0,
+      "width": 0.55,
+      "height": 2.64,
+      "depth": 0.55,
+      "color": [
+        0.34841212141893907,
+        0.3446000862572023,
+        0.3464408785295253
+      ]
+    },
+    {
+      "name": "depot_pillar_06",
+      "x": -14.5,
+      "y": 2.12,
+      "z": -3,
+      "width": 0.55,
+      "height": 4.23,
+      "depth": 0.55,
+      "color": [
+        0.3733418359158757,
+        0.34953811762977277,
+        0.34457829810762386
+      ]
+    },
+    {
+      "name": "depot_pillar_07",
+      "x": -14.5,
+      "y": 2.11,
+      "z": 3,
+      "width": 0.55,
+      "height": 4.21,
+      "depth": 0.55,
+      "color": [
+        0.38704090867931396,
+        0.3436138029062771,
+        0.36053307360417336
+      ]
+    },
+    {
+      "name": "depot_interior_debris_00",
+      "x": -10.57,
+      "y": 0.12,
+      "z": 1.47,
+      "width": 1.41,
+      "height": 0.25,
+      "depth": 1.46,
+      "color": [
+        0.24284686541398826,
+        0.22306636326146692,
+        0.2346548490732345
+      ],
+      "rotY": 5.342,
+      "checkCollisions": true
+    },
+    {
+      "name": "depot_interior_debris_01",
+      "x": -12.89,
+      "y": 0.13,
+      "z": -0.41,
+      "width": 0.37,
+      "height": 0.25,
+      "depth": 0.4,
+      "color": [
+        0.2872663663658097,
+        0.2989763732997712,
+        0.22826542584871096
+      ],
+      "rotY": 5.194,
+      "checkCollisions": false
+    },
+    {
+      "name": "depot_interior_debris_02",
+      "x": -11.0,
+      "y": 0.12,
+      "z": -0.1,
+      "width": 0.66,
+      "height": 0.23,
+      "depth": 0.49,
+      "color": [
+        0.23747453684483735,
+        0.23395730241923376,
+        0.23598720708725968
+      ],
+      "rotY": 0.097,
+      "checkCollisions": false
+    },
+    {
+      "name": "depot_interior_debris_03",
+      "x": -15.86,
+      "y": 0.12,
+      "z": -0.03,
+      "width": 2.08,
+      "height": 0.25,
+      "depth": 1.57,
+      "color": [
+        0.28330120345603876,
+        0.2733507534951017,
+        0.2482944350831847
+      ],
+      "rotY": 2.601,
+      "checkCollisions": true
+    },
+    {
+      "name": "depot_interior_debris_04",
+      "x": -17.17,
+      "y": 0.12,
+      "z": 0.44,
+      "width": 1.24,
+      "height": 0.25,
+      "depth": 1.34,
+      "color": [
+        0.2529955863619341,
+        0.2855518967599836,
+        0.20585167336302534
+      ],
+      "rotY": 2.759,
+      "checkCollisions": true
+    },
+    {
+      "name": "depot_interior_debris_05",
+      "x": -12.94,
+      "y": 0.13,
+      "z": -0.41,
+      "width": 0.35,
+      "height": 0.26,
+      "depth": 0.37,
+      "color": [
+        0.26651687210101294,
+        0.26597009652764125,
+        0.20982399283020872
+      ],
+      "rotY": 3.512,
+      "checkCollisions": false
+    },
+    {
+      "name": "depot_interior_debris_06",
+      "x": -12.89,
+      "y": 0.17,
+      "z": 0.76,
+      "width": 0.33,
+      "height": 0.34,
+      "depth": 0.57,
+      "color": [
+        0.31250727589201427,
+        0.225019761432203,
+        0.19865085201940255
+      ],
+      "rotY": 4.77,
+      "checkCollisions": false
+    },
+    {
+      "name": "depot_interior_debris_07",
+      "x": -13.33,
+      "y": 0.18,
+      "z": -1.67,
+      "width": 0.59,
+      "height": 0.35,
+      "depth": 0.55,
+      "color": [
+        0.2911087017961657,
+        0.2440091889896801,
+        0.19528115398666598
+      ],
+      "rotY": 2.151,
+      "checkCollisions": false
+    },
+    {
+      "name": "depot_interior_debris_08",
+      "x": -13.5,
+      "y": 0.12,
+      "z": -1.56,
+      "width": 1.33,
+      "height": 0.25,
+      "depth": 1.5,
+      "color": [
+        0.32666406551095944,
+        0.2830691946519883,
+        0.1912537488573002
+      ],
+      "rotY": 2.368,
+      "checkCollisions": true
+    },
+    {
+      "name": "depot_interior_debris_09",
+      "x": -13.04,
+      "y": 0.18,
+      "z": -2.02,
+      "width": 0.39,
+      "height": 0.36,
+      "depth": 0.48,
+      "color": [
+        0.31741962305480154,
+        0.21801788484784668,
+        0.27172658172356573
+      ],
+      "rotY": 5.501,
+      "checkCollisions": false
+    },
+    {
+      "name": "depot_wing_wall_00",
+      "x": -6.89,
+      "y": 1.05,
+      "z": 0.61,
+      "width": 4.0,
+      "height": 2.1,
+      "depth": 0.4,
+      "color": [
+        0.4470861549177603,
+        0.21192360725636905,
+        0.14984927728951108
+      ],
+      "rotY": 0.45
+    },
+    {
+      "name": "depot_wing_wall_01",
+      "x": -5.7,
+      "y": 1.15,
+      "z": 2.74,
+      "width": 0.4,
+      "height": 2.3,
+      "depth": 2.8,
+      "color": [
+        0.40507170831519157,
+        0.15364804779550076,
+        0.15172212363504184
+      ],
+      "rotY": 0.45
+    },
+    {
+      "name": "depot_wing_wall_02",
+      "x": -8.11,
+      "y": 0.85,
+      "z": 3.13,
+      "width": 3.0,
+      "height": 1.7,
+      "depth": 0.4,
+      "color": [
+        0.40405101177012315,
+        0.16270623691841737,
+        0.19549148023801421
+      ],
+      "rotY": 0.45
+    },
+    {
+      "name": "depot_wing_debris_00",
+      "x": -6.69,
+      "y": 0.1,
+      "z": 2.95,
+      "width": 0.39,
+      "height": 0.2,
+      "depth": 0.34,
+      "color": [
+        0.2927496439230585,
+        0.22723007324359917,
+        0.22537420419153165
+      ],
+      "rotY": 3.811,
+      "checkCollisions": false
+    },
+    {
+      "name": "depot_wing_debris_01",
+      "x": -7.54,
+      "y": 0.1,
+      "z": 1.48,
+      "width": 0.4,
+      "height": 0.2,
+      "depth": 0.55,
+      "color": [
+        0.2534566815023538,
+        0.3013889192571299,
+        0.25102726401882997
+      ],
+      "rotY": 3.443,
+      "checkCollisions": false
+    },
+    {
+      "name": "depot_wing_debris_02",
+      "x": -6.42,
+      "y": 0.1,
+      "z": 1.32,
+      "width": 0.56,
+      "height": 0.2,
+      "depth": 0.39,
+      "color": [
+        0.2899543944143505,
+        0.27122722589642756,
+        0.2801241740396197
+      ],
+      "rotY": 1.431,
+      "checkCollisions": false
+    },
+    {
+      "name": "depot_wing_debris_03",
+      "x": -7.65,
+      "y": 0.1,
+      "z": 2.89,
+      "width": 0.36,
+      "height": 0.2,
+      "depth": 0.49,
+      "color": [
+        0.2663835427489534,
+        0.27671813569512704,
+        0.23347113818252005
+      ],
+      "rotY": 3.554,
+      "checkCollisions": false
     }
   ],
   "props": [
