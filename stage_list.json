@@ -11,10 +11,3 @@
     "desc": "まだ作成中の新しいカスタムステージです。",
     "fileUrl": "https://raw.githubusercontent.com/tianzhongrongzhi1-wq/eazy_game_stage/main/stage2_data.json"
   },
-  {
-    "id": "urban_area",
-    "name": "7.市街地",
-    "desc": "GLBモデルを読み込む市街地ステージです。",
-    "fileUrl": "https://raw.githubusercontent.com/tianzhongrongzhi1-wq/eazy_game_stage/main/urban_area.json"
-  }
-]
