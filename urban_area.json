@@ -6,21 +6,17 @@
     "y": -7.00,
     "z": -57.28
   },
-  "boxes": [
-    {
-      "name": "invisibleGround",
-      "width": 200,
-      "height": 0.5,
-      "depth": 200,
-      "x": -79.55,
-      "y": -11.0,
-      "z": -57.28,
-      "isVisible": false
-    }
-  ],
   "glbModel": {
     "url": "https://raw.githubusercontent.com/tianzhongrongzhi1-wq/eazy_game_stage/main/",
     "fileName": "urban_area.glb",
+    "scale": 1.0,
+    "x": 0,
+    "y": 0,
+    "z": 0
+  },
+  "collisionModel": {
+    "url": "https://raw.githubusercontent.com/tianzhongrongzhi1-wq/eazy_game_stage/main/",
+    "fileName": "urban_area_collision.glb",
     "scale": 1.0,
     "x": 0,
     "y": 0,
