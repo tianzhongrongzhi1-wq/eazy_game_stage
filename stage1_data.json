@@ -1,227 +1,773 @@
-# -*- coding: utf-8 -*-
-import json
-
-boxes = []
-props = []
-
-def add_box(name, x, z, w, h, d, color, rotY=None):
-    b = {"name": name, "x": round(x,3), "z": round(z,3), "width": w, "height": h, "depth": d, "color": color}
-    if rotY is not None:
-        b["rotY"] = round(rotY,3)
-    boxes.append(b)
-
-def add_prop(ptype, x, z, rotY=None, y=0):
-    p = {"type": ptype, "x": round(x,3), "y": y, "z": round(z,3)}
-    if rotY is not None:
-        p["rotY"] = round(rotY,3)
-    props.append(p)
-
-# ==========================================================
-# SECTION 1: 南部境界の演出（壊れたフェンスライン・倒れた電柱・監視小屋跡）
-# ==========================================================
-fence_segments = [
-    (-18, -19.3, 4.0, 1.6, None),
-    (-13, -19.4, 3.0, 1.4, 0.08),
-    (-9,  -19.2, 3.5, 1.5, None),
-    (-2,  -19.3, 5.0, 1.5, None),
-    (4,   -19.2, 4.0, 1.3, -0.05),
-    (10,  -19.4, 3.5, 1.5, None),
-    (16,  -19.2, 4.0, 1.4, 0.10),
-]
-for i, (x, z, w, h, rot) in enumerate(fence_segments, start=1):
-    add_box(f"z1_fence_seg_{i:02d}", x, z, w, h, 0.15, [0.25, 0.22, 0.18], rot)
-
-add_box("z1_guardpost_ruin", -16.5, -18.6, 1.8, 2.0, 1.8, [0.35, 0.32, 0.30])
-
-fallen_poles = [(6, -19.0, 4.5, 0.7), (-10, -18.8, 4.0, -0.3), (13, -18.9, 4.2, 0.5)]
-for i, (x, z, length, rot) in enumerate(fallen_poles, start=1):
-    add_box(f"z1_fallen_pole_{i:02d}", x, z, 0.3, 0.5, length, [0.30, 0.28, 0.25], rot)
-
-# ==========================================================
-# SECTION 2: 線路システム（5本、東西方向に平行、間隔3m）
-# バラスト道床＋レール2本＋枕木16本 x 5トラック
-# ==========================================================
-TRACK_Z_POSITIONS = [-18.0, -15.0, -12.0, -9.0, -6.0]
-SLEEPER_XS = [-18.75, -16.25, -13.75, -11.25, -8.75, -6.25, -3.75, -1.25,
-               1.25,   3.75,   6.25,   8.75,  11.25, 13.75, 16.25, 18.75]
-
-for t_idx, tz in enumerate(TRACK_Z_POSITIONS, start=1):
-    add_box(f"z1_track{t_idx}_bed", 0, tz, 40, 0.10, 1.7, [0.30, 0.28, 0.25])
-    add_box(f"z1_track{t_idx}_rail_L", 0, tz - 0.35, 40, 0.15, 0.08, [0.16, 0.16, 0.17])
-    add_box(f"z1_track{t_idx}_rail_R", 0, tz + 0.35, 40, 0.15, 0.08, [0.16, 0.16, 0.17])
-    for s_idx, sx in enumerate(SLEEPER_XS, start=1):
-        add_box(f"z1_track{t_idx}_sleeper_{s_idx:02d}", sx, tz, 0.30, 0.10, 1.8, [0.22, 0.18, 0.14])
-
-# ==========================================================
-# SECTION 3: 脱線した貨車の残骸群（トラック間の隙間に配置）
-# ==========================================================
-# E: ジャックナイフ状に折れ曲がった有蓋貨車（トラック1-2間）
-add_box("z1_railcar_boxcarE_body", -15, -16.5, 2.6, 2.9, 8.5, [0.38, 0.16, 0.12], 0.35)
-add_box("z1_railcar_boxcarE_doorgap", -15.3, -16.9, 0.6, 2.0, 0.15, [0.08, 0.08, 0.08], 0.35)
-
-# F: 転覆した無蓋貨車（ゴンドラ）（トラック1-2間、東側）
-add_box("z1_railcar_gondolaF_body", 17, -16.7, 2.4, 1.6, 7.0, [0.30, 0.30, 0.32], -0.15)
-
-# B: タンク車（トラック4-5間）
-add_box("z1_railcar_tankerB_body", 10, -7.6, 2.2, 2.3, 9.0, [0.25, 0.32, 0.28], -0.10)
-
-# D: 平貨車＋積荷崩落（トラック4-5間、西側）
-add_box("z1_railcar_flatcarD_body", -13, -7.3, 2.4, 0.5, 8.5, [0.30, 0.27, 0.24])
-flatcar_crates = [(-13.0, -8.6, 1.0,1.0,1.0, None), (-12.4, -8.9, 0.9,0.8,0.9, 0.5), (-13.6, -9.1, 0.7,0.6,0.7, -0.3)]
-for i, (x,z,w,h,d,rot) in enumerate(flatcar_crates, start=1):
-    add_box(f"z1_crate_onflat_{i:02d}", x, z, w, h, d, [0.42, 0.32, 0.18], rot)
-
-# ==========================================================
-# SECTION 4: 給水塔（ダルゴラ地区に実在した煉瓦造りの給水塔をイメージ）
-# ==========================================================
-add_box("z1_watertower_base", -16, -13.3, 4.5, 0.4, 4.5, [0.32, 0.30, 0.28])
-add_box("z1_watertower_body", -16, -13.3, 3.2, 8.5, 3.2, [0.42, 0.20, 0.18])
-
-# ==========================================================
-# SECTION 5: 信号小屋の残骸（トラック2-3間、東側）
-# ==========================================================
-add_box("z1_signalhut_wall_S", 14, -14.0, 3.0, 2.3, 0.25, [0.40, 0.22, 0.20])
-add_box("z1_signalhut_wall_E", 15.4, -13.2, 0.25, 2.0, 2.8, [0.40, 0.22, 0.20])
-add_box("z1_signalhut_roof_debris", 14.3, -12.6, 2.5, 0.3, 2.0, [0.25, 0.22, 0.20], 0.3)
-
-# ==========================================================
-# SECTION 6: 石炭・貨物庫の残骸（トラック3-4間、東側）＋ 石炭の山
-# ==========================================================
-add_box("z1_cargoshed_wall_S", 6, -11.4, 6.0, 2.6, 0.3, [0.30, 0.28, 0.26])
-add_box("z1_cargoshed_wall_W", 3.2, -10.0, 0.3, 2.6, 3.0, [0.30, 0.28, 0.26])
-add_box("z1_cargoshed_wall_N_broken", 6, -8.7, 4.0, 1.4, 0.3, [0.28, 0.26, 0.24], 0.05)
-add_box("z1_cargoshed_roof_debris", 5, -10.2, 5.0, 0.3, 4.0, [0.22, 0.20, 0.18], 0.15)
-add_box("z1_coal_pile_01", 8.5, -10.6, 2.5, 1.0, 2.5, [0.12, 0.12, 0.13], 0.2)
-add_box("z1_coal_pile_02", 9.5, -9.8, 1.8, 0.7, 1.8, [0.10, 0.10, 0.11], -0.3)
-
-# ==========================================================
-# SECTION 7: 倒壊したクレーンの残骸（トラック3-4間、西側）
-# ==========================================================
-add_box("z1_crane_mast_stump", -9, -10.4, 1.0, 3.5, 1.0, [0.25, 0.22, 0.15])
-add_box("z1_crane_boom_fallen", -6, -11.0, 0.8, 0.4, 9.0, [0.28, 0.24, 0.16], 0.5)
-add_box("z1_crane_counterweight", -9.5, -9.3, 1.5, 0.8, 1.5, [0.20, 0.20, 0.20])
-
-# ==========================================================
-# SECTION 8: 爆撃クレーター群
-# ==========================================================
-craters = [
-    (-3, -14.2, 2.5, 0.9, 2.5, 0.3),
-    (4,  -12.8, 3.0, 1.1, 2.2, -0.4),
-    (-11,-6.5,  2.2, 0.8, 2.8, 0.6),
-    (13, -5.8,  2.6, 1.0, 2.0, -0.2),
-    (-4, -4.5,  2.0, 0.7, 2.4, 0.5),
-]
-for i, (x,z,w,h,d,rot) in enumerate(craters, start=1):
-    add_box(f"z1_crater_{i:02d}", x, z, w, h, d, [0.30, 0.30, 0.30], rot)
-
-# ==========================================================
-# SECTION 9: 散乱瓦礫
-# ==========================================================
-rubble = [
-    (-8, -16.8, 2.0, 0.7, 2.0, 0.4),
-    (-5, -16.3, 1.6, 0.5, 2.3, -0.6),
-    (2,  -16.6, 2.2, 0.8, 1.8, 0.2),
-    (17, -14.0, 1.8, 0.6, 1.8, 0.7),
-    (-17,-11.5, 2.0, 0.5, 1.5, -0.2),
-    (19, -9.5,  1.6, 0.6, 2.0, 0.3),
-    (-2, -9.0,  1.4, 0.5, 1.6, -0.5),
-    (-19,-6.0,  1.8, 0.6, 1.7, 0.4),
-]
-for i, (x,z,w,h,d,rot) in enumerate(rubble, start=1):
-    add_box(f"z1_rubble_{i:02d}", x, z, w, h, d, [0.35, 0.35, 0.35], rot)
-
-# ==========================================================
-# SECTION 10: 木箱クラスタ（積荷）
-# ==========================================================
-crate_cluster_b = [(1, -7.8, 1.1,1.0,1.1, None), (2, -7.4, 0.9,1.4,0.9, 0.2), (0.3, -7.2, 0.8,0.7,0.8, -0.4)]
-for i, (x,z,w,h,d,rot) in enumerate(crate_cluster_b, start=1):
-    add_box(f"z1_crate_B{i:02d}", x, z, w, h, d, [0.40, 0.30, 0.17], rot)
-
-# ==========================================================
-# SECTION 11: 前線防御ライン（塹壕・apron ゾーン、z=-6〜-0.5）
-# ==========================================================
-trenches = [
-    (-14, -5.2, 0.2), (-7, -4.6, -0.15), (0, -5.0, 0.1), (7, -4.4, -0.25), (14, -5.1, 0.15)
-]
-for i, (x,z,rot) in enumerate(trenches, start=1):
-    add_box(f"z1_trench_{i:02d}", x, z, 6, 1.2, 1.5, [0.35, 0.30, 0.25], rot)
-
-# 砂嚢陣地（6クラスタ x 3個）
-sandbag_clusters = [
-    (-16, -3.5), (-9, -2.8), (-1, -3.2), (5, -2.6), (11, -3.0), (17, -3.4)
-]
-for c_idx, (cx, cz) in enumerate(sandbag_clusters, start=1):
-    add_box(f"z1_sandbag_{c_idx:02d}a", cx - 0.4, cz, 1.0, 0.6, 0.5, [0.50, 0.42, 0.30])
-    add_box(f"z1_sandbag_{c_idx:02d}b", cx + 0.6, cz, 1.0, 0.6, 0.5, [0.50, 0.42, 0.30])
-    add_box(f"z1_sandbag_{c_idx:02d}c", cx + 1.1, cz + 0.3, 1.0, 0.6, 0.5, [0.48, 0.40, 0.28], 0.25)
-
-# 有刺鉄線ライン
-wires = [(-12, -1.8, 5, 0.05), (-3, -1.6, 4, -0.1), (5, -1.9, 4.5, 0.08), (13, -1.7, 4, -0.05), (-18, -2.0, 3, 0.15)]
-for i, (x,z,w,rot) in enumerate(wires, start=1):
-    add_box(f"z1_wire_{i:02d}", x, z, w, 0.9, 0.1, [0.40, 0.40, 0.40], rot)
-
-# ==========================================================
-# SECTION 12: 細かい残骸（雰囲気の密度を上げるための小物散乱）
-# ==========================================================
-misc_debris = [
-    (-4, -18.5), (10, -17.3), (-8, -14.6), (1, -15.6), (18, -11.2), (-14, -9.5),
-    (6, -8.4), (-19, -16.0), (15, -8.6), (-1, -6.8), (9, -12.6), (-17, -5.6),
-    (3, -4.3), (19, -6.9), (-10, -16.9), (12, -14.4), (-5, -11.8), (7, -16.2),
-    (-19, -9.8), (17, -2.6)
-]
-for i, (x, z) in enumerate(misc_debris, start=1):
-    w = round(0.6 + (i % 3) * 0.1, 2)
-    h = round(0.3 + (i % 2) * 0.1, 2)
-    d = round(0.6 + (i % 4) * 0.075, 2)
-    rot = round(((i * 37) % 100) / 100.0 - 0.5, 2)
-    shade = round(0.32 + (i % 3) * 0.01, 2)
-    add_box(f"z1_debris_misc_{i:02d}", x, z, w, h, d, [shade, shade, shade], rot)
-
-# ==========================================================
-# PROPS（既存stage.jsのcreateProp対応タイプのみ使用：car, dumpster, barrel, lowCover, doorFrame）
-# ==========================================================
-
-# 廃棄・突入車両
-cars = [(-3, -18.2, 1.2), (5, -17.8, -0.9), (-11, -3.5, 0.4), (18, -4.0, -1.3)]
-for x, z, rot in cars:
-    add_prop("car", x, z, rot)
-
-# ゴミ集積コンテナ
-for x, z, rot in [(12, -10.8, 0.3), (-5, -2.4, -0.6)]:
-    add_prop("dumpster", x, z, rot)
-
-# ドラム缶クラスタ（5クラスタ x 3）
-barrel_clusters = [(-6, -13.0), (3, -9.4), (-16, -8.0), (15, -6.6), (-2, -11.5)]
-for cx, cz in barrel_clusters:
-    add_prop("barrel", cx - 0.3, cz)
-    add_prop("barrel", cx + 0.3, cz + 0.2)
-    add_prop("barrel", cx, cz - 0.4)
-
-# 低カバー（戦術ポイント）
-low_covers = [
-    (-13, -1.0, 0), (-6, -0.8, 0.3), (2, -1.2, -0.2), (9, -0.9, 0.1), (16, -1.1, -0.3),
-    (-17, -14.5, 1.57), (19, -12.0, -1.57), (-4, -17.5, 0.4)
-]
-for x, z, rot in low_covers:
-    add_prop("lowCover", x, z, rot)
-
-# ヤード検問ゲート
-add_prop("doorFrame", 0, -19.0, 0)
-
-# ==========================================================
-# 出力
-# ==========================================================
-result = {
-    "zoneName": "ZONE 1: 鉄道操車場跡地（南部開放戦区）",
-    "zoneDescription": "スターリングラード ダルゴラ地区。鉄道操車場・給水塔・木造住宅街が密集していたが、無差別爆撃と市街戦により全て瓦礫と化した。プレイヤーはここから大聖堂へ向けて進撃を開始する。",
-    "zoneBounds": {"xMin": -20, "xMax": 20, "zMin": -19.5, "zMax": -0.5},
-    "boxes": boxes,
-    "props": props
+{
+  "stageName": "赤の市街地 - ZONE 1: 鉄道操車場跡地（南部開放戦区）",
+  "spawnPoint": {
+    "x": 0,
+    "y": 0,
+    "z": -10
+  },
+  "lightIntensity": 0.8,
+  "boxes": [
+    {
+      "name": "zone1_ground",
+      "x": 0,
+      "y": -0.1,
+      "z": -8.5,
+      "width": 44,
+      "height": 0.2,
+      "depth": 22,
+      "color": [0.22, 0.22, 0.25]
+    },
+    {
+      "name": "rail_bed_left",
+      "x": -12,
+      "y": 0.05,
+      "z": -8.5,
+      "width": 2.0,
+      "height": 0.1,
+      "depth": 18,
+      "color": [0.3, 0.25, 0.2]
+    },
+    {
+      "name": "rail_bed_center",
+      "x": 0,
+      "y": 0.05,
+      "z": -8.5,
+      "width": 2.5,
+      "height": 0.1,
+      "depth": 18,
+      "color": [0.3, 0.25, 0.2]
+    },
+    {
+      "name": "rail_bed_right",
+      "x": 12,
+      "y": 0.05,
+      "z": -8.5,
+      "width": 2.0,
+      "height": 0.1,
+      "depth": 18,
+      "color": [0.3, 0.25, 0.2]
+    },
+    {
+      "name": "trench_nw",
+      "x": -8,
+      "y": 0.6,
+      "z": -2,
+      "width": 4.5,
+      "height": 1.2,
+      "depth": 0.8,
+      "color": [0.35, 0.3, 0.25],
+      "rotY": 0.785
+    },
+    {
+      "name": "trench_nc",
+      "x": 0,
+      "y": 0.6,
+      "z": -1,
+      "width": 5.0,
+      "height": 1.2,
+      "depth": 0.8,
+      "color": [0.35, 0.3, 0.25],
+      "rotY": 0.0
+    },
+    {
+      "name": "trench_ne",
+      "x": 8,
+      "y": 0.6,
+      "z": -2,
+      "width": 4.5,
+      "height": 1.2,
+      "depth": 0.8,
+      "color": [0.35, 0.3, 0.25],
+      "rotY": -0.785
+    },
+    {
+      "name": "trench_sw",
+      "x": -10,
+      "y": 0.6,
+      "z": -9,
+      "width": 4.0,
+      "height": 1.2,
+      "depth": 0.8,
+      "color": [0.35, 0.3, 0.25],
+      "rotY": -0.5
+    },
+    {
+      "name": "trench_sc",
+      "x": 3,
+      "y": 0.6,
+      "z": -8,
+      "width": 4.5,
+      "height": 1.2,
+      "depth": 0.8,
+      "color": [0.35, 0.3, 0.25],
+      "rotY": 0.3
+    },
+    {
+      "name": "trench_se",
+      "x": 11,
+      "y": 0.6,
+      "z": -10,
+      "width": 4.0,
+      "height": 1.2,
+      "depth": 0.8,
+      "color": [0.35, 0.3, 0.25],
+      "rotY": 0.5
+    },
+    {
+      "name": "wrecked_tank_1",
+      "x": -6,
+      "y": 0.7,
+      "z": -4,
+      "width": 3.2,
+      "height": 1.4,
+      "depth": 5.5,
+      "color": [0.28, 0.3, 0.25],
+      "rotY": 0.2
+    },
+    {
+      "name": "wrecked_tank_2",
+      "x": 7,
+      "y": 0.7,
+      "z": -6,
+      "width": 3.0,
+      "height": 1.3,
+      "depth": 5.0,
+      "color": [0.25, 0.27, 0.25],
+      "rotY": -0.3
+    },
+    {
+      "name": "wrecked_truck_3",
+      "x": -2,
+      "y": 0.6,
+      "z": -12,
+      "width": 2.5,
+      "height": 1.2,
+      "depth": 4.8,
+      "color": [0.32, 0.25, 0.22],
+      "rotY": 0.1
+    },
+    {
+      "name": "wrecked_car_4",
+      "x": 4,
+      "y": 0.5,
+      "z": -14,
+      "width": 2.2,
+      "height": 1.0,
+      "depth": 4.2,
+      "color": [0.2, 0.2, 0.2],
+      "rotY": -0.8
+    },
+    {
+      "name": "wrecked_wagon_5",
+      "x": -13,
+      "y": 0.8,
+      "z": -7,
+      "width": 2.8,
+      "height": 1.5,
+      "depth": 6.0,
+      "color": [0.3, 0.28, 0.25],
+      "rotY": 0.0
+    },
+    {
+      "name": "wrecked_tank_6",
+      "x": 13,
+      "y": 0.8,
+      "z": -11,
+      "width": 3.2,
+      "height": 1.4,
+      "depth": 5.5,
+      "color": [0.26, 0.28, 0.26],
+      "rotY": 0.4
+    },
+    {
+      "name": "drum_cluster_l1",
+      "x": -4.5,
+      "y": 0.5,
+      "z": -7.5,
+      "width": 0.8,
+      "height": 1.0,
+      "depth": 0.8,
+      "color": [0.5, 0.2, 0.1]
+    },
+    {
+      "name": "drum_cluster_l2",
+      "x": -5.2,
+      "y": 0.5,
+      "z": -7.0,
+      "width": 0.8,
+      "height": 1.0,
+      "depth": 0.8,
+      "color": [0.4, 0.15, 0.1]
+    },
+    {
+      "name": "drum_cluster_l3",
+      "x": -4.0,
+      "y": 0.5,
+      "z": -6.8,
+      "width": 0.8,
+      "height": 1.0,
+      "depth": 0.8,
+      "color": [0.45, 0.2, 0.15]
+    },
+    {
+      "name": "drum_cluster_r1",
+      "x": 5.0,
+      "y": 0.5,
+      "z": -8.5,
+      "width": 0.8,
+      "height": 1.0,
+      "depth": 0.8,
+      "color": [0.5, 0.2, 0.1]
+    },
+    {
+      "name": "drum_cluster_r2",
+      "x": 5.8,
+      "y": 0.5,
+      "z": -8.0,
+      "width": 0.8,
+      "height": 1.0,
+      "depth": 0.8,
+      "color": [0.4, 0.15, 0.1]
+    },
+    {
+      "name": "drum_cluster_r3",
+      "x": 5.3,
+      "y": 0.5,
+      "z": -7.3,
+      "width": 0.8,
+      "height": 1.0,
+      "depth": 0.8,
+      "color": [0.45, 0.2, 0.15]
+    },
+    {
+      "name": "front_facade_left",
+      "x": -15,
+      "y": 0.9,
+      "z": -0.5,
+      "width": 8.0,
+      "height": 1.8,
+      "depth": 0.6,
+      "color": [0.45, 0.2, 0.2]
+    },
+    {
+      "name": "front_facade_right",
+      "x": 15,
+      "y": 0.9,
+      "z": -0.5,
+      "width": 8.0,
+      "height": 1.8,
+      "depth": 0.6,
+      "color": [0.45, 0.2, 0.2]
+    },
+    {
+      "name": "rubble_heap_lw",
+      "x": -18,
+      "y": 0.5,
+      "z": -13,
+      "width": 3.5,
+      "height": 1.0,
+      "depth": 4.0,
+      "color": [0.3, 0.3, 0.3]
+    },
+    {
+      "name": "rubble_heap_rw",
+      "x": 18,
+      "y": 0.5,
+      "z": -13,
+      "width": 3.5,
+      "height": 1.0,
+      "depth": 4.0,
+      "color": [0.3, 0.3, 0.3]
+    },
+    {
+      "name": "z1_fence_seg_01",
+      "x": -18,
+      "z": -19.3,
+      "width": 4.0,
+      "height": 1.6,
+      "depth": 0.15,
+      "color": [0.25, 0.22, 0.18]
+    },
+    {
+      "name": "z1_fence_seg_02",
+      "x": -13,
+      "z": -19.4,
+      "width": 3.0,
+      "height": 1.4,
+      "depth": 0.15,
+      "color": [0.25, 0.22, 0.18],
+      "rotY": 0.08
+    },
+    {
+      "name": "z1_fence_seg_03",
+      "x": -9,
+      "z": -19.2,
+      "width": 3.5,
+      "height": 1.5,
+      "depth": 0.15,
+      "color": [0.25, 0.22, 0.18]
+    },
+    {
+      "name": "z1_fence_seg_04",
+      "x": -2,
+      "z": -19.3,
+      "width": 5.0,
+      "height": 1.5,
+      "depth": 0.15,
+      "color": [0.25, 0.22, 0.18]
+    },
+    {
+      "name": "z1_fence_seg_05",
+      "x": 4,
+      "z": -19.2,
+      "width": 4.0,
+      "height": 1.3,
+      "depth": 0.15,
+      "color": [0.25, 0.22, 0.18],
+      "rotY": -0.05
+    },
+    {
+      "name": "z1_fence_seg_06",
+      "x": 10,
+      "z": -19.4,
+      "width": 3.5,
+      "height": 1.5,
+      "depth": 0.15,
+      "color": [0.25, 0.22, 0.18]
+    },
+    {
+      "name": "z1_fence_seg_07",
+      "x": 16,
+      "z": -19.2,
+      "width": 4.0,
+      "height": 1.4,
+      "depth": 0.15,
+      "color": [0.25, 0.22, 0.18],
+      "rotY": 0.1
+    },
+    {
+      "name": "z1_guardpost_ruin",
+      "x": -16.5,
+      "y": 1.0,
+      "z": -18.6,
+      "width": 1.8,
+      "height": 2.0,
+      "depth": 1.8,
+      "color": [0.35, 0.32, 0.3]
+    },
+    {
+      "name": "z1_track1_bed",
+      "x": 0,
+      "y": 0.05,
+      "z": -18.0,
+      "width": 40,
+      "height": 0.1,
+      "depth": 1.7,
+      "color": [0.3, 0.28, 0.25]
+    },
+    {
+      "name": "z1_track1_rail_L",
+      "x": 0,
+      "y": 0.075,
+      "z": -18.35,
+      "width": 40,
+      "height": 0.15,
+      "depth": 0.08,
+      "color": [0.16, 0.16, 0.17]
+    },
+    {
+      "name": "z1_track1_rail_R",
+      "x": 0,
+      "y": 0.075,
+      "z": -17.65,
+      "width": 40,
+      "height": 0.15,
+      "depth": 0.08,
+      "color": [0.16, 0.16, 0.17]
+    },
+    {
+      "name": "z1_track2_bed",
+      "x": 0,
+      "y": 0.05,
+      "z": -15.0,
+      "width": 40,
+      "height": 0.1,
+      "depth": 1.7,
+      "color": [0.3, 0.28, 0.25]
+    },
+    {
+      "name": "z1_track2_rail_L",
+      "x": 0,
+      "y": 0.075,
+      "z": -15.35,
+      "width": 40,
+      "height": 0.15,
+      "depth": 0.08,
+      "color": [0.16, 0.16, 0.17]
+    },
+    {
+      "name": "z1_track2_rail_R",
+      "x": 0,
+      "y": 0.075,
+      "z": -14.65,
+      "width": 40,
+      "height": 0.15,
+      "depth": 0.08,
+      "color": [0.16, 0.16, 0.17]
+    },
+    {
+      "name": "z1_track3_bed",
+      "x": 0,
+      "y": 0.05,
+      "z": -12.0,
+      "width": 40,
+      "height": 0.1,
+      "depth": 1.7,
+      "color": [0.3, 0.28, 0.25]
+    },
+    {
+      "name": "z1_track3_rail_L",
+      "x": 0,
+      "y": 0.075,
+      "z": -12.35,
+      "width": 40,
+      "height": 0.15,
+      "depth": 0.08,
+      "color": [0.16, 0.16, 0.17]
+    },
+    {
+      "name": "z1_track3_rail_R",
+      "x": 0,
+      "y": 0.075,
+      "z": -11.65,
+      "width": 40,
+      "height": 0.15,
+      "depth": 0.08,
+      "color": [0.16, 0.16, 0.17]
+    },
+    {
+      "name": "z1_track4_bed",
+      "x": 0,
+      "y": 0.05,
+      "z": -9.0,
+      "width": 40,
+      "height": 0.1,
+      "depth": 1.7,
+      "color": [0.3, 0.28, 0.25]
+    },
+    {
+      "name": "z1_track4_rail_L",
+      "x": 0,
+      "y": 0.075,
+      "z": -9.35,
+      "width": 40,
+      "height": 0.15,
+      "depth": 0.08,
+      "color": [0.16, 0.16, 0.17]
+    },
+    {
+      "name": "z1_track4_rail_R",
+      "x": 0,
+      "y": 0.075,
+      "z": -8.65,
+      "width": 40,
+      "height": 0.15,
+      "depth": 0.08,
+      "color": [0.16, 0.16, 0.17]
+    },
+    {
+      "name": "z1_track5_bed",
+      "x": 0,
+      "y": 0.05,
+      "z": -6.0,
+      "width": 40,
+      "height": 0.1,
+      "depth": 1.7,
+      "color": [0.3, 0.28, 0.25]
+    },
+    {
+      "name": "z1_track5_rail_L",
+      "x": 0,
+      "y": 0.075,
+      "z": -6.35,
+      "width": 40,
+      "height": 0.15,
+      "depth": 0.08,
+      "color": [0.16, 0.16, 0.17]
+    },
+    {
+      "name": "z1_track5_rail_R",
+      "x": 0,
+      "y": 0.075,
+      "z": -5.65,
+      "width": 40,
+      "height": 0.15,
+      "depth": 0.08,
+      "color": [0.16, 0.16, 0.17]
+    },
+    {
+      "name": "z1_railcar_boxcarE_body",
+      "x": -15,
+      "y": 1.45,
+      "z": -16.5,
+      "width": 2.6,
+      "height": 2.9,
+      "depth": 8.5,
+      "color": [0.38, 0.16, 0.12],
+      "rotY": 0.35
+    },
+    {
+      "name": "z1_railcar_boxcarE_doorgap",
+      "x": -15.3,
+      "y": 1.0,
+      "z": -16.9,
+      "width": 0.6,
+      "height": 2.0,
+      "depth": 0.15,
+      "color": [0.08, 0.08, 0.08],
+      "rotY": 0.35
+    },
+    {
+      "name": "z1_railcar_gondolaF_body",
+      "x": 17,
+      "y": 0.8,
+      "z": -16.7,
+      "width": 2.4,
+      "height": 1.6,
+      "depth": 7.0,
+      "color": [0.3, 0.3, 0.32],
+      "rotY": -0.15
+    },
+    {
+      "name": "z1_railcar_tankerB_body",
+      "x": 10,
+      "y": 1.15,
+      "z": -7.6,
+      "width": 2.2,
+      "height": 2.3,
+      "depth": 9.0,
+      "color": [0.25, 0.32, 0.28],
+      "rotY": -0.1
+    },
+    {
+      "name": "z1_railcar_flatcarD_body",
+      "x": -13,
+      "y": 0.25,
+      "z": -7.3,
+      "width": 2.4,
+      "height": 0.5,
+      "depth": 8.5,
+      "color": [0.3, 0.27, 0.24]
+    },
+    {
+      "name": "z1_crate_onflat_01",
+      "x": -13.0,
+      "y": 0.5,
+      "z": -8.6,
+      "width": 1.0,
+      "height": 1.0,
+      "depth": 1.0,
+      "color": [0.42, 0.32, 0.18]
+    },
+    {
+      "name": "z1_crate_onflat_02",
+      "x": -12.4,
+      "y": 0.4,
+      "z": -8.9,
+      "width": 0.9,
+      "height": 0.8,
+      "depth": 0.9,
+      "color": [0.42, 0.32, 0.18],
+      "rotY": 0.5
+    },
+    {
+      "name": "z1_crate_onflat_03",
+      "x": -13.6,
+      "y": 0.35,
+      "z": -9.1,
+      "width": 0.7,
+      "height": 0.6,
+      "depth": 0.7,
+      "color": [0.42, 0.32, 0.18],
+      "rotY": -0.3
+    },
+    {
+      "name": "z1_watertower_base",
+      "x": -16,
+      "y": 0.2,
+      "z": -13.3,
+      "width": 4.5,
+      "height": 0.4,
+      "depth": 4.5,
+      "color": [0.32, 0.3, 0.28]
+    },
+    {
+      "name": "z1_watertower_body",
+      "x": -16,
+      "y": 4.25,
+      "z": -13.3,
+      "width": 3.2,
+      "height": 8.5,
+      "depth": 3.2,
+      "color": [0.42, 0.2, 0.18]
+    },
+    {
+      "name": "z1_signalhut_wall_S",
+      "x": 14,
+      "y": 1.15,
+      "z": -14.0,
+      "width": 3.0,
+      "height": 2.3,
+      "depth": 0.25,
+      "color": [0.4, 0.22, 0.2]
+    },
+    {
+      "name": "z1_signalhut_wall_E",
+      "x": 15.4,
+      "y": 1.0,
+      "z": -13.2,
+      "width": 0.25,
+      "height": 2.0,
+      "depth": 2.8,
+      "color": [0.4, 0.22, 0.2]
+    },
+    {
+      "name": "z1_signalhut_roof_debris",
+      "x": 14.3,
+      "y": 0.15,
+      "z": -12.6,
+      "width": 2.5,
+      "height": 0.3,
+      "depth": 2.0,
+      "color": [0.25, 0.22, 0.2],
+      "rotY": 0.3
+    },
+    {
+      "name": "z1_cargoshed_wall_S",
+      "x": 6,
+      "y": 1.3,
+      "z": -11.4,
+      "width": 6.0,
+      "height": 2.6,
+      "depth": 0.3,
+      "color": [0.3, 0.28, 0.26]
+    },
+    {
+      "name": "z1_cargoshed_wall_W",
+      "x": 3.2,
+      "y": 1.3,
+      "z": -10.0,
+      "width": 0.3,
+      "height": 2.6,
+      "depth": 3.0,
+      "color": [0.3, 0.28, 0.26]
+    },
+    {
+      "name": "z1_cargoshed_wall_N_broken",
+      "x": 6,
+      "y": 0.7,
+      "z": -8.7,
+      "width": 4.0,
+      "height": 1.4,
+      "depth": 0.3,
+      "color": [0.28, 0.26, 0.24],
+      "rotY": 0.05
+    },
+    {
+      "name": "z1_cargoshed_roof_debris",
+      "x": 5,
+      "y": 0.15,
+      "z": -10.2,
+      "width": 5.0,
+      "height": 0.3,
+      "depth": 4.0,
+      "color": [0.22, 0.2, 0.18],
+      "rotY": 0.15
+    },
+    {
+      "name": "z1_coal_pile_01",
+      "x": 8.5,
+      "y": 0.5,
+      "z": -10.6,
+      "width": 2.5,
+      "height": 1.0,
+      "depth": 2.5,
+      "color": [0.12, 0.12, 0.13],
+      "rotY": 0.2
+    },
+    {
+      "name": "z1_coal_pile_02",
+      "x": 9.5,
+      "y": 0.35,
+      "z": -9.8,
+      "width": 1.8,
+      "height": 0.7,
+      "depth": 1.8,
+      "color": [0.1, 0.1, 0.11],
+      "rotY": -0.3
+    },
+    {
+      "name": "z1_crane_mast_stump",
+      "x": -9,
+      "y": 1.75,
+      "z": -10.4,
+      "width": 1.0,
+      "height": 3.5,
+      "depth": 1.0,
+      "color": [0.25, 0.22, 0.15]
+    },
+    {
+      "name": "z1_crane_boom_fallen",
+      "x": -6,
+      "y": 0.2,
+      "z": -11.0,
+      "width": 0.8,
+      "height": 0.4,
+      "depth": 9.0,
+      "color": [0.28, 0.24, 0.16],
+      "rotY": 0.5
+    },
+    {
+      "name": "z1_crane_counterweight",
+      "x": -9.5,
+      "y": 0.4,
+      "z": -9.3,
+      "width": 1.5,
+      "height": 0.8,
+      "depth": 1.5,
+      "color": [0.2, 0.2, 0.2]
+    }
+  ],
+  "props": [
+    { "type": "car", "x": -3, "y": 0, "z": -18.2, "rotY": 1.2 },
+    { "type": "car", "x": 5, "y": 0, "z": -17.8, "rotY": -0.9 },
+    { "type": "car", "x": -11, "y": 0, "z": -3.5, "rotY": 0.4 },
+    { "type": "car", "x": 18, "y": 0, "z": -4.0, "rotY": -1.3 },
+    { "type": "dumpster", "x": 12, "y": 0, "z": -10.8, "rotY": 0.3 },
+    { "type": "dumpster", "x": -5, "y": 0, "z": -2.4, "rotY": -0.6 },
+    { "type": "barrel", "x": -6.3, "y": 0, "z": -13.0 },
+    { "type": "barrel", "x": -5.7, "y": 0, "z": -12.8 },
+    { "type": "barrel", "x": -6.0, "y": 0, "z": -13.4 },
+    { "type": "barrel", "x": 2.7, "y": 0, "z": -9.4 },
+    { "type": "barrel", "x": 3.3, "y": 0, "z": -9.2 },
+    { "type": "barrel", "x": 3.0, "y": 0, "z": -9.8 },
+    { "type": "barrel", "x": -16.3, "y": 0, "z": -8.0 },
+    { "type": "barrel", "x": -15.7, "y": 0, "z": -7.8 },
+    { "type": "barrel", "x": -16.0, "y": 0, "z": -8.4 },
+    { "type": "barrel", "x": 14.7, "y": 0, "z": -6.6 },
+    { "type": "barrel", "x": 15.3, "y": 0, "z": -6.4 },
+    { "type": "barrel", "x": 15.0, "y": 0, "z": -7.0 },
+    { "type": "barrel", "x": -2.3, "y": 0, "z": -11.5 },
+    { "type": "barrel", "x": -1.7, "y": 0, "z": -11.3 },
+    { "type": "barrel", "x": -2.0, "y": 0, "z": -11.9 },
+    { "type": "lowCover", "x": -13, "y": 0, "z": -1.0, "rotY": 0 },
+    { "type": "lowCover", "x": -6, "y": 0, "z": -0.8, "rotY": 0.3 },
+    { "type": "lowCover", "x": 2, "y": 0, "z": -1.2, "rotY": -0.2 },
+    { "type": "lowCover", "x": 9, "y": 0, "z": -0.9, "rotY": 0.1 },
+    { "type": "lowCover", "x": 16, "y": 0, "z": -1.1, "rotY": -0.3 },
+    { "type": "lowCover", "x": -17, "y": 0, "z": -14.5, "rotY": 1.57 },
+    { "type": "lowCover", "x": 19, "y": 0, "z": -12.0, "rotY": -1.57 },
+    { "type": "lowCover", "x": -4, "y": 0, "z": -17.5, "rotY": 0.4 },
+    { "type": "doorFrame", "x": 0, "y": 0, "z": -19.0, "rotY": 0 }
+  ]
 }
-
-with open("/home/claude/zone1_railyard.json", "w", encoding="utf-8") as f:
-    json.dump(result, f, ensure_ascii=False, indent=2)
-
-print(f"boxes: {len(boxes)}")
-print(f"props: {len(props)}")
-print(f"total entries: {len(boxes) + len(props)}")
